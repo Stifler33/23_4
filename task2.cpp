@@ -1,5 +1,4 @@
 #include <iostream>
-#include <map>
 #include <fstream>
 int sumTrainCar = 10;
 #define INPUT_MAX \
