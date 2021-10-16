@@ -8,19 +8,25 @@ for(int i = 0; i < sumTrainCar; i++){\
         std::cout << "crowded " << i+1 << " train car\n";\
     }\
 }
-void inputInf(const int train[]){
-    INPUT_MAX;
+#define INPUT_MIN \
+for(int i = 0; i < sumTrainCar; i++){\
+    if (train[i] == 0) {\
+        std::cout << "empty " << i+1 << " train car\n";\
+    }\
 }
-
-#define MAX_PASS inputInf(train)
-#define INPUT_INFORMATION
-#define EMPTY_PASS
+#define INPUT_SUM \
+int sum = 0;       \
+for(int i : train)\
+    sum += i; \
+std::cout << "sum passengers " << sum << std::endl;
 int main() {
     std::ifstream input("input.txt");
     int train[sumTrainCar];
     for (int i = 0; i < sumTrainCar; i++){
        input >> train[i];
     }
-    MAX_PASS;
+    INPUT_MAX
+    INPUT_MIN
+    INPUT_SUM
     return 0;
 }
